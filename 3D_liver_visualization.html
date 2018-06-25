@@ -1,0 +1,451 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Liver 3D visualization protocol, ver. 180624</title>
+<style type="text/css">
+.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, pre.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E code
+{
+    font-family: Charter !important;
+    font-size: 16pt !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    line-height: 1.5 !important;
+    margin: 0;
+    margin-bottom: 5pt;
+    margin-top: 8pt;
+    padding: 0;
+}
+.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E
+{
+    color: #000000;
+}
+p.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, .MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E p, .MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E td, .MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E th, h1.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, h2.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, h3.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, h4.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, h5.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, h6.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, div.csl-bib-body.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, pre.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E
+{
+    text-indent: 0pt;
+}
+p.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, .MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E p, .MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E td, .MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E th, .MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E ul, .MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E ol, h1.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, h2.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, h3.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, h4.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, h5.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, h6.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E,  div.csl-bib-body.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, div.manuscript-author-list.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, div.manuscript-affiliation-list.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E, pre.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E
+{
+    text-align: left;
+}
+div.csl-bib-body.MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E div.csl-entry
+{
+    margin-bottom: 5pt;
+    margin-top: 8pt;
+}
+
+sub
+{
+    font-size: 0.7em;
+}
+sup
+{
+    font-size: 0.75em;
+}
+
+@media print
+{
+    #manuscript-author-list-button {
+        display:none;
+    }
+    .tree-item-gutter-button {
+        display:none;
+    }
+}
+.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, pre.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3 code
+{
+    font-family: Charter !important;
+    font-size: 14pt !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    line-height: 1.5 !important;
+    margin: 0;
+    margin-bottom: 5pt;
+    margin-top: 8pt;
+    padding: 0;
+}
+.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3
+{
+    color: #000000;
+}
+p.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, .MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3 p, .MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3 td, .MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3 th, h1.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, h2.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, h3.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, h4.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, h5.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, h6.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, div.csl-bib-body.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, pre.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3
+{
+    text-indent: 0pt;
+}
+p.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, .MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3 p, .MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3 td, .MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3 th, .MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3 ul, .MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3 ol, h1.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, h2.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, h3.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, h4.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, h5.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, h6.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3,  div.csl-bib-body.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, div.manuscript-author-list.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, div.manuscript-affiliation-list.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3, pre.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3
+{
+    text-align: left;
+}
+div.csl-bib-body.MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3 div.csl-entry
+{
+    margin-bottom: 5pt;
+    margin-top: 8pt;
+}
+
+sub
+{
+    font-size: 0.7em;
+}
+sup
+{
+    font-size: 0.75em;
+}
+
+@media print
+{
+    #manuscript-author-list-button {
+        display:none;
+    }
+    .tree-item-gutter-button {
+        display:none;
+    }
+}
+.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, pre.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 code
+{
+    font-family: Charter !important;
+    font-size: 12pt !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    line-height: 2 !important;
+    margin: 0;
+    margin-bottom: 10pt;
+    margin-top: 10pt;
+    padding: 0;
+}
+.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629
+{
+    color: #000000;
+}
+p.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, .MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 p, .MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 td, .MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 th, h1.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, h2.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, h3.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, h4.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, h5.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, h6.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, div.csl-bib-body.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, pre.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629
+{
+    text-indent: 0pt;
+}
+p.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, .MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 p, .MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 td, .MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 th, .MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 ul, .MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 ol, h1.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, h2.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, h3.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, h4.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, h5.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, h6.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629,  div.csl-bib-body.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, div.manuscript-author-list.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, div.manuscript-affiliation-list.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, pre.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629
+{
+    text-align: left;
+}
+div.csl-bib-body.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 div.csl-entry
+{
+    margin-bottom: 10pt;
+    margin-top: 10pt;
+}
+
+ul.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629, ol.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629
+{
+    padding-left: 30pt;
+}
+ul.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 li, ol.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 li
+{
+    line-height: 2;
+}
+ul.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 { /* Bullet list styling for Body Text */
+    margin: 0 0 0 30pt;
+    padding: 0 0 0 0;
+    -webkit-margin: 0;
+    -webkit-padding: 0;
+}
+ul.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 li {
+    list-style-type: disc;
+}
+
+ul.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 ul { /* Bullet list styling for Body Text */
+    margin: 0 0 0 0;
+    padding: 0 0 0 30pt;
+    -webkit-margin: 0;
+    -webkit-padding: 0;
+}
+ul.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 ul li {
+    list-style-type: circle;
+}
+
+ul.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 ul ul { /* Bullet list styling for Body Text */
+    margin: 0 0 0 0;
+    padding: 0 0 0 30pt;
+    -webkit-margin: 0;
+    -webkit-padding: 0;
+}
+ul.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 ul ul li {
+    list-style-type: circle;
+}
+
+
+
+ol.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 {  /* Numbered list styling for Body Text */
+    counter-reset: MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629_1 0;
+    list-style-type: none;
+    margin: 0 0 0 30pt;
+    padding: 0 0 0 30pt;
+    -webkit-margin: 0;
+    -webkit-padding: 0;
+}
+ol.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 li::before {
+    content: counter(MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629_1, decimal)"."" ";
+    counter-increment: MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629_1;
+	margin-left: -30pt;
+    position: absolute;
+}
+
+
+ol.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 ol {  /* Numbered list styling for Body Text */
+    counter-reset: MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629_2 0;
+    list-style-type: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 30pt;
+    -webkit-margin: 0;
+    -webkit-padding: 0;
+}
+ol.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 ol li::before {
+    content: counter(MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629_2, decimal)"."" ";
+    counter-increment: MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629_2;
+	margin-left: -30pt;
+    position: absolute;
+}
+
+
+ol.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 ol ol {  /* Numbered list styling for Body Text */
+    counter-reset: MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629_3 0;
+    list-style-type: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 30pt;
+    -webkit-margin: 0;
+    -webkit-padding: 0;
+}
+ol.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 ol ol li::before {
+    content: counter(MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629_3, decimal)"."" ";
+    counter-increment: MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629_3;
+	margin-left: -30pt;
+    position: absolute;
+}
+
+
+ol.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 ol ol ol {  /* Numbered list styling for Body Text */
+    counter-reset: MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629_4 0;
+    list-style-type: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 30pt;
+    -webkit-margin: 0;
+    -webkit-padding: 0;
+}
+ol.MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 ol ol ol li::before {
+    content: counter(MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629_4, decimal)"."" ";
+    counter-increment: MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629_4;
+	margin-left: -30pt;
+    position: absolute;
+}
+
+
+
+
+
+
+sub
+{
+    font-size: 0.7em;
+}
+sup
+{
+    font-size: 0.75em;
+}
+
+@media print
+{
+    #manuscript-author-list-button {
+        display:none;
+    }
+    .tree-item-gutter-button {
+        display:none;
+    }
+}
+.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, pre.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE code
+{
+    font-family: Charter !important;
+    font-size: 20pt !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    line-height: 1.5 !important;
+    margin: 0;
+    margin-bottom: 10pt;
+    margin-top: 10pt;
+    padding: 0;
+}
+.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE
+{
+    color: #000000;
+}
+p.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, .MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE p, .MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE td, .MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE th, h1.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, h2.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, h3.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, h4.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, h5.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, h6.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, div.csl-bib-body.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, pre.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE
+{
+    text-indent: 0pt;
+}
+p.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, .MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE p, .MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE td, .MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE th, .MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE ul, .MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE ol, h1.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, h2.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, h3.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, h4.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, h5.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, h6.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE,  div.csl-bib-body.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, div.manuscript-author-list.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, div.manuscript-affiliation-list.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE, pre.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE
+{
+    text-align: left;
+}
+div.csl-bib-body.MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE div.csl-entry
+{
+    margin-bottom: 10pt;
+    margin-top: 10pt;
+}
+
+sub
+{
+    font-size: 0.7em;
+}
+sup
+{
+    font-size: 0.75em;
+}
+
+@media print
+{
+    #manuscript-author-list-button {
+        display:none;
+    }
+    .tree-item-gutter-button {
+        display:none;
+    }
+}
+
+
+/* All tables */
+table {
+    border: none !important;
+	border-collapse: separate !important;
+	border-spacing: 0px !important;
+	width: 100% !important;
+}
+/* All cells in all tables */
+th, td {
+    cursor: default;
+	padding: 3px 7px;
+	
+}
+
+/*#canvas td
+{
+    border: none;
+}*/
+
+/* Caption */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D caption {
+    caption-side: bottom !important;
+    cursor: default;
+	padding-top: 5px !important;
+    text-align: center;
+		
+}
+
+/* Header row */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D thead tr {
+    background-color: #f4f4f4 !important;
+}
+/* Left header column */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D thead tr th:first-child {
+	border-left: none !important;
+}
+/* Header cells */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D thead th {
+    border-bottom: solid 1px #000000 !important;
+    border-left: none !important;
+	border-top: solid 1px #000000 !important;
+}
+/* Right-hand header column */
+/*table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D thead tr th:nth-last-child(1) {*/
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D thead tr th:last-child {
+	border-right: none !important;
+}
+
+
+/* Body rows */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D tbody tr[class=""] {
+	background-color: #ffffff !important;
+}
+/* Even body rows */
+
+/* Left-hand body column */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D tbody tr td:first-child {
+	border-left: none !important;
+	border-bottom: none !important;	
+}
+/* Body cells */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D tbody td:not(:first-child) {
+	border-left: dotted 1px #000000 !important;
+	border-bottom: none !important;
+	
+}
+/* Last body row */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D tbody tr:nth-last-child(1) td {
+    border-bottom: none !important;
+}
+/* Right-hand body column */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D tbody tr td:last-child {
+	border-right: none !important;
+}
+
+/* Footer row */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D tfoot tr {
+    background-color: #ffffff !important;
+}
+/* Footer left-hand column */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D tfoot tr td:first-child {
+	border-left: none !important;
+}
+/* Footer cells */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D tfoot tr td {
+	border-top: solid 1px #000000 !important;
+	border-left: none !important;
+    border-bottom: solid 1px #000000 !important;	
+}
+/* Right-hand footer column */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D tfoot tr td:last-child {
+	border-right: none !important;
+}
+
+/* Header-to-body spacing */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D tr.header_bottom_spacing
+{
+    background-color: white !important;
+	border: none !important;
+	height: 3px !important;
+	line-height: 3px !important;
+	padding: 0 !important;
+	-webkit-user-select: none;
+}
+
+/* Footer-to-body spacing */
+table.MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D tr.footer_top_spacing
+{
+    background-color: white;
+	border: none !important;
+	height: 3px !important;
+	line-height: 3px !important;	
+	padding: 0 !important;
+	-webkit-user-select: none;
+}
+
+/* A very special case: these colspan="n" table cells are needed for non-layout reasons in tables displayed in the editor. */
+tr.header_bottom_spacing td {
+    display: none;
+}
+
+tr.footer_top_spacing td {
+    display: none;
+}
+
+</style>
+
+<script src="./js/lib/citation-compiler-vendor.js"></script>
+
+
+</head>
+<body>
+
+<div class="manuscript-title MPParagraphStyle_5C565717-638D-463D-A37C-DBDDAEB03BEE">Liver 3D visualization protocol, ver. 180624</div>
+
+<div class="manuscript-author-list MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629"><span class="author">Kenji Kamimoto<sup></sup></span></div>
+<div class="manuscript-affiliations-list MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629"></div>
+
+<div id="cross-references"></div>
+<h1 id="MPSection:9CC5BE14-9C05-4F68-8B76-70A36C6F738E" class="MPSection MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E">1.  目的</h1><p id="MPParagraphElement:D17B58F9-18E5-4F8F-A027-1BAC9282E471" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement" data-placeholder-text="Start from here. Enjoy writing! - the Manuscripts Team.">厚みを持った状態の組織を染色、可視化することで3次元構造の解析がおこなえるようにする。</p><h1 id="MPSection:3B3E1E47-44B7-4570-F99A-74CCE3116B93" class="MPSection MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E">2.  特徴</h1><p id="MPParagraphElement:8614CB01-064D-46E5-D911-1F0D49BA69C9" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">http://doi.org/10.7554/eLife.15034 の論文のデータを見てください。得られる画像のイメージがつかめると思います。</p><h2 id="MPSection:464B23BB-AF97-46D1-D61C-5534C5252FCC" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">2.1.  Advantages</h2><ul id="MPListElement:77947DD9-BE04-46B2-C967-68F736FF614D" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">基本的に免疫染色によって染色をおこなう。また、蛍光タンパク質を発現するレポーターマウスの組織も利用可能。3次元での連続性や、組織/細胞の形態などが詳細にわかる</li><li data-placeholder-text="List item">固定条件さえ合えば様々な抗体を使用可能。</li><li data-placeholder-text="List item">肝臓で条件検討を行っているが、他の組織でも同様のプロトコルが使用可能。</li><li data-placeholder-text="List item">抗体の使用量を通常の切片の免疫染色と同程度に抑えられるので、コストがそれほどかからない。コスト/撮影可能視野 でいえば通常の２D組織切片の免疫染色法よりもコストパフォーマンスが良い。</li></ul><h2 id="MPSection:BDC44C93-4AEF-4E01-97D3-03C485602297" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">2.2.  Disadvantages</h2><ul id="MPListElement:01823F3F-96E4-4434-F471-9D861A54BAED" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">3D画像取得の際に、深部ほどシグナルが弱くなるので、それを補正する処理を行う。そのため、シグナル強度の定量性がな くなり、シグナルの大小に関する議論はできない。</li><li data-placeholder-text="List item">染色に時間がかかる</li><li data-placeholder-text="List item">PFA前固定が必須なため、その固定条件に合わない抗体の染色は行うことができない</li><li data-placeholder-text="List item">組織透明化の際に、透明化試薬の種類によっては組織が収縮/膨張する。そのため絶対的なサイズ・距離の正確な定量ができなくなる。収縮/膨張は均一に起こるので組織内の相対的なサイズ・距離や形態の解析には問題がない。</li></ul><h1 id="MPSection:2ADF49DE-ACA2-413E-CF34-7C3928F2440F" class="MPSection MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E">3.  注意</h1><h2 id="MPSection:ED594A63-326D-4F8E-9869-19A5FE65CB87" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">3.1.  発表について</h2><p id="MPParagraphElement:4ABB0C51-A848-49C2-A353-D00473435EDD" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">Kamimoto, K., Kaneko, K., Kok, C. Y.-Y., Okada, H., Miyajima, A., &amp; Itoh, T. (2016). Heterogeneity and stochastic growth regulation of biliary epithelial cells dictate dynamic epithelial tissue remodeling. eLife, 5(2016JULY), 656. http://doi.org/10.7554/eLife.15034</p><h2 id="MPSection:D6B28480-672A-42FB-A711-F75FD54FD0B1" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">3.2.  コストについて</h2><ul id="MPListElement:585DAAA0-F7FA-49B4-DD86-16B017AAE8C5" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">特に抗体の使用量について、コストを常に意識してください。基本的に抗体液の量や濃度を増やしても結果は良くならないことを確認しています。 ・ このプロトコルは３Dでの染色ですが、通常の２Dの染色で染まらない抗体が３Dで染まるようになることはありません。時間と抗体節約のために、事前に通常の２Dのサンプル（PFA前固定）で染まることを確認してから3Dの実験を行うことを推奨します。</li></ul><h2 id="MPSection:8A726F57-223C-4812-C160-DD242D536D24" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">3.3.  顕微鏡操作について</h2><ul id="MPListElement:4CB1E948-DCA0-4F49-E775-3EAE666E7C78" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">このプロトコルでは顕微鏡操作については触れていませんが、顕微鏡のセッティングがかなり実験結果を左右します。初めて行う際には習熟している人へ支持を仰いで下さい。</li><li data-placeholder-text="List item"> 宮島研究室ではオリンパスの共焦点顕微鏡（FV１０００、FV１２００、FV３０００）を使用し、レンズは３０倍のシリコーン浸の対物レンズを使って実験していました。 レンズの質はイメージングのクオリティーを左右します。 このイメージングとの組み合わせでは、下記のような順で取得できる画像の質が上がります。 【ドライレンズ＜水浸レンズ＜オイル浸レンズ＜シリコーン浸レンズ】 </li><li data-placeholder-text="List item">できればシリコーン浸のレンズを使用してください。</li><li data-placeholder-text="List item"> 他のメーカーの顕微鏡を使用する際はその顕微鏡の操作に習熟した人の支持を仰いでください。</li></ul><h1 id="MPSection:6B4FB3B4-B5F8-44D3-99E9-4A407005A6CC" class="MPSection MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E">4.  Materials</h1><ul id="MPListElement:9DDB6945-864F-445F-837B-9EC4630410C9" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">PBS</li><li data-placeholder-text="List item">PFA</li><li data-placeholder-text="List item">スクロース</li><li data-placeholder-text="List item">D-fructose</li><li data-placeholder-text="List item">10mlシリンジ</li><li data-placeholder-text="List item">プラスチック針（留置針、〜２７G）</li><li data-placeholder-text="List item">FBS</li><li data-placeholder-text="List item">TritonX-100</li><li data-placeholder-text="List item">アジ化ナトリウム</li><li data-placeholder-text="List item">Hoechst33342</li></ul><p id="MPParagraphElement:8B50CC56-7683-4669-AF71-92204135E8B0" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">注意 染色用傾向試薬および抗体に関しては補足の項目で別途解説</p><h1 id="MPSection:51006BF4-CC6E-4B43-EEA0-7FA5FE893B48" class="MPSection MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E">5.  試薬準備</h1><p id="MPParagraphElement:75D88116-B08B-48EC-9A49-4A2E54F7A33D" class="MPElement placeholder MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement" data-placeholder-text="Section contents"></p><h2 id="MPSection:2504F860-6ACA-490F-8BD8-C02F6187B0A2" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">5.1.  2% アジ化ナトリウムストック</h2><table xmlns="http://www.w3.org/1999/xhtml id="MPTableElement:8966319D-341F-42EB-B0B0-B0FB3058D8EE" class="MPTableElement MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629" data-contained-object-id="MPTable:10EE9036-DBD1-4048-82FE-C68778CA59EA"><colgroup><col><col></colgroup><thead style="display: table-header-group;"><tr><th data-placeholder-text="Header 1">材料</th><th data-placeholder-text="Header 2" class="placeholder"> </th></tr></thead><tbody><tr><td data-placeholder-text="Data">アジ化ナトリウム粉末</td><td data-placeholder-text="Data">60 mg</td></tr><tr><td data-placeholder-text="Data">Milli-Q 水</td><td data-placeholder-text="Data"><p> 3 ml</p></td></tr></tbody><tfoot style="display: table-footer-group;"><tr><td data-placeholder-text="Footer 1">Total</td><td data-placeholder-text="Footer 2">3 ml</td></tr></tfoot></table><p id="MPParagraphElement:B28F1DC8-512D-4651-D894-A1585A6B555F" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">Blocking Bufferや抗体反応液が腐らないようにするための保存料として使用します。粉末アジ化ナトリウムを溶かして水溶液にします。劇薬なので手袋必須。また、絶対に口にしないこと。 MilliQに溶かして終濃度2％の水溶液にします。3mlくらい作ればしばらく持つので、作り過ぎないこと。ビーカーなどを汚染しないように直接チューブの中で混合してください。 また、金属の薬さじに触れると爆発する危険性があるので、絶対に金属には触れさせないでください。</p><h2 id="MPSection:9F1AD84B-E569-4B4E-D83E-0148D740E9F0" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">5.2.  10% Triton-X ストック</h2><table xmlns="http://www.w3.org/1999/xhtml id="MPTableElement:15357BD9-F496-4D59-CC3A-D06367CF3D70" class="MPTableElement MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629" data-contained-object-id="MPTable:95C8ACF9-1DD4-42ED-8D5A-6E1C85614066"><colgroup><col><col></colgroup><thead style="display: table-header-group;"><tr><th data-placeholder-text="Header 1">材料</th><th data-placeholder-text="Header 2" class="placeholder"> </th></tr></thead><tbody><tr><td data-placeholder-text="Data">Triton-X100</td><td data-placeholder-text="Data">5 g</td></tr><tr><td data-placeholder-text="Data">Milli-Q 水</td><td data-placeholder-text="Data">~45 ml</td></tr></tbody><tfoot style="display: table-footer-group;"><tr><td data-placeholder-text="Footer 1">Total</td><td data-placeholder-text="Footer 2">50 ml</td></tr></tfoot></table><p id="MPParagraphElement:220F11FD-BFC1-4E17-A7F6-69D17DFA263D" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">Blocking Buffer に添加するTritonのストックを予め作っておく。Tritonは粘性が 高いので、このように10%ストック溶液を作っておくと使いやすい。</p><h2 id="MPSection:3A545A9D-FB52-42FC-8B4E-E83201210E97" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">5.3.  Blocking Buffer</h2><table xmlns="http://www.w3.org/1999/xhtml id="MPTableElement:21071096-53C6-48E2-A3BF-3DE07E8CB340" class="MPTableElement MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629" data-contained-object-id="MPTable:6F9A2004-B201-4D5C-95B9-5F2815E65536"><colgroup><col><col><col></colgroup><thead style="display: table-header-group;"><tr><th data-placeholder-text="Header 1" class="placeholder"> </th><th data-placeholder-text="Header 2" class="placeholder"> </th><th data-placeholder-text="Header 3">終濃度</th></tr></thead><tbody><tr><td data-placeholder-text="Data">FBS</td><td data-placeholder-text="Data">1.25 ml</td><td data-placeholder-text="Data">5 %</td></tr><tr><td data-placeholder-text="Data">10% Triton stock</td><td data-placeholder-text="Data">0.83 ml</td><td data-placeholder-text="Data">0.3 %</td></tr><tr><td data-placeholder-text="Data"> 2% アジ化ナトリウムstock</td><td data-placeholder-text="Data">250 ul</td><td data-placeholder-text="Data">0.02 %</td></tr><tr><td data-placeholder-text="Data">PBS</td><td data-placeholder-text="Data">~ 22 ml</td><td data-placeholder-text="Data" class="placeholder"> </td></tr></tbody><tfoot style="display: table-footer-group;"><tr><td data-placeholder-text="Footer 1">Total</td><td data-placeholder-text="Footer 2">25 ml</td><td data-placeholder-text="Footer 3" class="placeholder"> </td></tr></tfoot></table><p id="MPParagraphElement:FCFC4C2A-E88F-4613-AF3E-525D0CA1AB38" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">Blocking や抗体の希釈に用いる溶液。抗体反応と浸透化を同時に行うため、常に 0.2%のTritonが入ったBufferでインキュベーションを行う。</p><h2 id="MPSection:E13FD648-01F0-4976-BAB2-BA80E3995C23" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">5.4.  SeeDB（透明化試薬）</h2><table xmlns="http://www.w3.org/1999/xhtml id="MPTableElement:ED53894B-E046-483A-C3C2-B34DDB494AC2" class="MPTableElement MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629" data-contained-object-id="MPTable:DBF5C183-91CF-49AD-D0D7-B4749DDAC4D9"><colgroup><col><col></colgroup><thead style="display: table-header-group;"><tr><th data-placeholder-text="Header 1" class="placeholder"> </th><th data-placeholder-text="Header 2" class="placeholder"> </th></tr></thead><tbody><tr><td data-placeholder-text="Data">D-fructose</td><td data-placeholder-text="Data">8.02 g</td></tr><tr><td data-placeholder-text="Data"><p>α-tioglycerol</p></td><td data-placeholder-text="Data">40 ul</td></tr><tr><td data-placeholder-text="Data">Milli-Q 水</td><td data-placeholder-text="Data">1.98 ml</td></tr></tbody><tfoot style="display: table-footer-group;"><tr><td data-placeholder-text="Footer 1">Total</td><td data-placeholder-text="Footer 2">10 ml</td></tr></tfoot></table><p id="MPParagraphElement:FE68AEA6-85F3-44D1-B87A-F4BDF41AAAE8" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">フルクトースベースの透明化試薬。 上記の試薬を混合し、37°Cで振盪しながら溶かす。溶けるのに時間が掛かるので、 透明化のステップの前日までに作っておく。室温で保管し、冷蔵庫には入れないこ と。作ってから時間が経つとフルクトースが固まるので、作りおきはできない。特に冬場はすぐに固まる。 SeeDB以外の透明化試薬については別項で記す。</p><h2 id="MPSection:7ADB4989-71CC-43DF-D3B3-B28C94AF9DF4" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">5.5.  4 % PFA溶液</h2><table xmlns="http://www.w3.org/1999/xhtml id="MPTableElement:1E368BE9-8F8F-49AF-C882-ADA8DF6985F9" class="MPTableElement MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629" data-contained-object-id="MPTable:EB5C8C56-2026-4F6D-B2CF-CE0F86379D22"><colgroup><col><col></colgroup><thead style="display: table-header-group;"><tr><th data-placeholder-text="Header 1" class="placeholder"> </th><th data-placeholder-text="Header 2" class="placeholder"> </th></tr></thead><tbody><tr><td data-placeholder-text="Data">PFA</td><td data-placeholder-text="Data">4 g</td></tr><tr><td data-placeholder-text="Data">NaOH solution（pH調整用のもの）</td><td data-placeholder-text="Data" class="placeholder"> </td></tr><tr><td data-placeholder-text="Data">PBS</td><td data-placeholder-text="Data">~100 ml</td></tr></tbody><tfoot style="display: table-footer-group;"><tr><td data-placeholder-text="Footer 1">Total</td><td data-placeholder-text="Footer 2">100ml</td></tr></tfoot></table><p id="MPParagraphElement:08C8FF3B-3E3D-4976-9F5E-3E2B4D9CD590" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement" data-placeholder-text="Subsection contents">固定に用いるPFA溶液。PFAを60°Cで暖めながら溶かす。NaOH溶液でpHを 7.4に合わせた後、適切なボリュームにする。 pH調整を怠ると、蛍光タンパク質を変性させる原因となる。<b><u>pH調整は必須。</u></b>灌流固定に使用するため、たくさん必要となる。また、この4%溶液をPBSで2倍に 希釈した2%PFA溶液も作っておく。</p><h2 id="MPSection:A85914C7-7561-40B4-C6A9-03E745644CFF" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">5.6.  20% スクロース液</h2><table xmlns="http://www.w3.org/1999/xhtml id="MPTableElement:471EF062-A9FA-4385-B509-20E7BD4CB3C0" class="MPTableElement MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629" data-contained-object-id="MPTable:56C869DE-57F2-4BC2-8BE4-5315540BF072"><colgroup><col><col></colgroup><thead style="display: table-header-group;"><tr><th data-placeholder-text="Header 1" class="placeholder"> </th><th data-placeholder-text="Header 2" class="placeholder"> </th></tr></thead><tbody><tr><td data-placeholder-text="Data">スクロース</td><td data-placeholder-text="Data">20 g</td></tr><tr><td data-placeholder-text="Data">PBS</td><td data-placeholder-text="Data">~up to 100ml</td></tr></tbody><tfoot style="display: table-footer-group;"><tr><td data-placeholder-text="Footer 1">Total</td><td data-placeholder-text="Footer 2">100 ml</td></tr></tfoot></table><p id="MPParagraphElement:7096900E-A725-4EB6-BFD4-1023B4942BD1" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement" data-placeholder-text="Subsection contents">組織固定後のサンプルを処理するのに使用する。同様に１０％、５％などのスクロース液も作る。</p><p id="MPParagraphElement:9A191B6E-1CC6-4475-E2DE-B8FF4E9AD780" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">4℃で保存する。</p><h1 id="MPSection:0F90D729-2DF9-437E-B5D0-138C0542E631" class="MPSection MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E">6.  実験スケジュール</h1><p id="MPParagraphElement:5D1C25A7-A354-404D-F1CA-3D078C8BDA6A" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">かなり時間がかかります。基本的に省略NGです。時間をかけて丁寧にやるほうが綺麗になるので気長にやりましょう。下記のスケジュールにはサンプルの固定などの時間は含まれていません。</p><h2 id="MPSection:843226D6-31DF-4370-E5DF-4A2EDAEF86BB" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">6.1.  組織のサンプリング・固定</h2><ol id="MPListElement:E5CE78C8-8EA4-4A72-AC53-1ED865F64653" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">Day1: サンプリング・還流固定. そのまま一晩PFAに浸漬する </li><li data-placeholder-text="List item">Day2: 固定液を捨て、スクロース液に交換</li><li data-placeholder-text="List item">Day3: スクロース液を交換</li><li data-placeholder-text="List item">Day4: サンプルを凍結</li></ol><h2 id="MPSection:D6570D17-26C7-43F9-F8AA-3958647EDB90" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">6.2.  染色</h2><ol id="MPListElement:096A96A2-6FC3-4B30-E64E-5AD52C910014" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item" class="placeholder">Day1: Thick section作成、1stAb start Day4: 1st wash start Day7: 2nd Ab start Day10: 2nd wash start Day12: Nuclei staining Day14: Clearing start Day15: Observation</li></ol><h2 id="MPSection:CBA1517C-4340-4DBD-86C3-58E267B4C1F3" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">6.3.  透明化、観察</h2><ol id="MPListElement:97B1ED6C-0DC7-4C13-8A48-88B3920821D8" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">Day1: 透明化処理開始</li><li data-placeholder-text="List item">Day2: 透明化処理終了、顕微鏡観察、画像取得</li></ol><h1 id="MPSection:78BEB22E-8563-427E-B263-3C5421097023" class="MPSection MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E">7.  実験操作</h1><p id="MPParagraphElement:5D0291C6-E5B8-4DC0-9D39-99D0E4BB124C" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement"></p><h2 id="MPSection:9783EA74-D3F2-41F3-88D0-1295C094F1C7" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">7.1.  組織の固定・サンプリング</h2><p id="MPParagraphElement:72B5EE74-B95A-4239-EC02-00C99584BD64" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">長期間の染色に耐え、微細な組織構造も保ったままイメージングするために、組織 の前固定は必須。 ザンボニでも代替可能だが、本項目の固定が最も推奨される。固定によってイメー ジングの質が全く違ってくる。灌流固定によってムラなどもなくなる。 灌流固定+浸漬固定の両方を行う。片方では固定が不十分。 最終的に2%PFAで終わるか、4%PFAで終わるかは用いる抗体に合わせて決めるこ と。</p><ol id="MPListElement:088BD53E-BD79-4204-8599-9B40AC2341CB" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">マウスを開腹し、門脈及び下大静脈に切れ込みを入れる。</li><li data-placeholder-text="List item">10mlシリンジとプ ラスチック針を用いてPBSを10ml還流する。この際、できるだけゆっくり液 体を流すこと。目安は10mlを1分。この操作によって肝臓中の血液を完全に抜く。赤血球中の鉄分は自家蛍光の元になり、イメージングの質を落とす。</li><li data-placeholder-text="List item"> 2%PFAをPBSと同様に10ml還流する。ゆっくり液体を流す。組織の硬さや色が変化するのを確認する。</li><li data-placeholder-text="List item"> 最終的に4%PFAで固定する場合は、さらに4%PFAを10ml還流する。</li><li data-placeholder-text="List item"> 肝臓を摘出し、包埋に適したサイズに切断する。暑さ１cm程度にメスやカミソリの歯を用いて肝臓を切る。</li><li data-placeholder-text="List item">15mlチューブに肝臓と固定 液10ml(2%PFA or 4%PFA)を入れる。</li><li data-placeholder-text="List item"> 15mlチューブに入ったサンプルを4°C、一晩(12h~16h)振盪する。蛍光タンパク質が発現しているサンプルを扱う場合は、以降のインキュベーション時はアルミホイルなどで遮光する。</li><li data-placeholder-text="List item"> PFAを捨て、PBSで数回洗った後、スクロース液に浸し、置換していく。直接20% スクロースに置換しても良いが、10%スクロース、15%スクロース、20%ス クロースというようにするのがよい。各ステップ4h〜12h程度.</li><li data-placeholder-text="List item" class="placeholder"></li><li data-placeholder-text="List item"> 7. OCTコンパウンドに包埋する。</li></ol><p id="MPParagraphElement:08D0B62A-B246-4CFF-D15E-4A4C7932C38A" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement"></p><ul id="MPListElement:11CE6AA2-23F1-4A26-AB4A-9990C2A1CDD1" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">PFAは毒性/発がん性が強いため、決して素手で触れないこと。</li><li data-placeholder-text="List item">FACSのときに使用するポンプをPFAで汚染しないように、FACS用の機材は使用しない。使い捨てシリンジを用いて還流する。</li></ul><h2 id="MPSection:15C9B4B5-C173-4E4C-AEB6-53F89FF90616" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">7.2.  切片の作成</h2><p id="MPParagraphElement:6F63B770-FF57-44D4-899A-E961C539DD0A" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">前固定されたサンプルを厚く切る。Thick sectionにすることで、Wholeで染色する ときよりも染色の時間が短縮され、また抗体の量も減らすことができる。また、観 察の際に切断面がレンズに垂直になるため、不本意な光の反射や屈折が抑えられ、 イメージングの質が向上する。 基本的に200umの厚さにすることを推奨するが、更に厚くすることも可能。しかし その際は染色の時間を伸ばす必要があるので、要注意</p><ol id="MPListElement:A27A4D31-2585-4CA2-F9C1-30F27BD7BB24" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">固定し、凍結させたサンプルをクライオスタットにセットする。</li><li data-placeholder-text="List item">サンプルが適切な角度でセットされていかどうか確認する。</li><li data-placeholder-text="List item">クライオスタットの切断の厚さの設定を２００um (もしくは別の希望の厚さ)にセットする。</li><li data-placeholder-text="List item">切片作成の直前、手でサンプル面に触れ(10秒程度)、サンプルの温度を上げる。サンプルの温度が低いままだと固すぎて厚く切断することができない。一時的にサンプルに直接触れ、サンプルを少しだけとかしてやることでスムーズに厚い切片を作成できる。サンプル全体を溶かしてしまうとクライオスタットから外れてしまうため、サンプル全体ではなくサンプルの切断する表面の近くのみを溶かすイメージ。</li><li data-placeholder-text="List item">200um幅で手早く切り進める。サンプルの温度が上がっているうちは抵抗な く切り進められる。このとき、 アンチロールバーを下げておくとよい。(このとき、アンチロー ルバーのネジなどは特別に設定しなくてもよい。) </li><li data-placeholder-text="List item">カットしたサンプルを50mlチューブに入れたPBSに直接入れる。</li><li data-placeholder-text="List item"> 同様にサンプルをカットしていく。</li><li data-placeholder-text="List item">２０枚くらい（もしくは欲しい枚数ぶん）カットしたら、５０mlチューブに入っているサンプルのPBSを変えて２〜３回すすぐ感じで洗浄する。O.C.Tコンパウンドが除ければよい。</li><li data-placeholder-text="List item">染色のステップにすすむ。</li></ol><p id="MPParagraphElement:5766F52A-B9FF-41A4-CD03-8D0B5236CBB5" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">注意事項 • この操作は特に文字では伝えられないコツがあるため、直接神元に習うこ と。 • 慣れれば通常の厚さの切片を作るよりもはるかに楽に作業ができるようにな るが、下手にやるとあっという間にサンプルが無くなっていく</p><h2 id="MPSection:A0474929-6C72-4C07-9483-FDC22B50225E" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">7.3.  染色</h2><p id="MPParagraphElement:DBEFDF9E-0258-442F-818C-F5D8607AAAA0" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement" data-placeholder-text="Subsection contents">浸透作用のあるバッファー・抗体液で長時間インキュベーションすることで、厚いサンプルでも免疫染色を行うことができる。厚い分時間がかかる。</p><p id="MPParagraphElement:2098079A-BEFA-4948-F72A-9C8F4B74261D" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">蛍光タンパク質が発現しているサンプルを扱い、染色する必要がない場合は染色の工程を飛ばして直接核染色に移るか、もしくは核染色も必要ない場合は直接次の透明化の工程に進む。</p><p id="MPParagraphElement:C8B74A46-C0D4-4277-BFD4-685CB4947631" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">蛍光タンパク質が発現しているサンプルで免疫染色を行い、蛍光タンパクと蛍光免疫染色の両方のシグナルを観察することもかのう。</p><p id="MPParagraphElement:9A3B129B-BE9F-47A7-B5AB-A3191CF77933" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement">基本的にインキュベーション時は遮光しておく。</p><ol id="MPListElement:44ED80D3-A23B-4201-AFCC-F66D2E9E0954" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">カットしたサンプル(5〜15枚)を50mlチューブの中で2,3回PBSで洗う。以 下、厚みのある切片を5~15枚一度に染色していく。</li><li data-placeholder-text="List item"> サンプルを2mlチューブに移し、PBSを捨てる。サンプルをチューブからチューブに移す時はできるだけサンプルを傷つけないように丁寧に扱う。デカンテーションで水ごとチューブに移してから水をピペットマンで除くようにする。</li><li data-placeholder-text="List item">Blocking Buffer を1ml加え、室温or 4°Cでゆっくり振盪させる。この間に 抗体液の準備を行う。 </li><li data-placeholder-text="List item">一次抗体を500ulのBlocking Bufferで希釈する。希釈する濃度は抗体の種類に依 存するが、通常の免疫染色と同じ希釈率（２００倍程度）でよい。例;抗体2.5ul+Blocking Buffer 500ul </li><li data-placeholder-text="List item">[一次抗体反応開始] サンプルの入ったチューブからBlocking Bufferを捨て、準備した抗体液を加える。チューブを横倒しにするとサンプルがちょうど浸っているはずであ る。</li><li data-placeholder-text="List item">横倒しの状態で4°Cでゆっくり振盪する。 この状態で3日(over night ✕3)振盪させるが、状態をみつつ、1日に1回手で揺すって やるとよい。</li><li data-placeholder-text="List item">[一次洗浄開始] 抗体液を回収し、2mlチューブの中でサンプルをPBSで洗浄する</li><li data-placeholder-text="List item">サンプルを新しいPBSが入った50mlチューブに移す。PBSの量は35 ml程度入れた状態で震盪機に乗せる。PBSの量と震盪機のスピードで、洗浄の程度が変わる。洗浄が激しすぎるとサンプルがバラバラになるので注意。</li><li data-placeholder-text="List item">横倒しの状態で4°Cで12hゆっくり振盪する。</li><li data-placeholder-text="List item">PBSを変えてさらに震盪する。合計48h,洗浄する。朝ラボに来た時と、ラボから帰るときにPBSを変えて２日洗浄するイメージ。</li><li data-placeholder-text="List item">[二次抗体反応開始] 2次抗体を500ulのBlocking Bufferで希釈する。抗体の種類などは補足の項目で記載。Alexa fluorシリーズは800 倍希釈で使用する。例:Alexa -fluor555 0.625ul+Blocking Buffer 500ul</li><li data-placeholder-text="List item">サンプルを2mlチューブに移し、PBSを捨てる。 </li><li data-placeholder-text="List item">準備した二次抗体液を加える。 </li><li data-placeholder-text="List item">4. 横倒しの状態で4°Cでゆっくり振盪する。この状態で3日(over night ✕3)振盪させるが、状態をみつつ、1日に1回手で揺すって やるとよい。</li><li data-placeholder-text="List item">[二次洗浄開始]抗体液を回収し、サンプルをPBSで洗浄する</li><li data-placeholder-text="List item">サンプルを新しいPBSが入った50mlチューブに移す。 </li><li data-placeholder-text="List item">横倒しの状態で4°Cで合計48h, ゆっくり振盪する。一次洗浄の時と同様に12hごとにPBSを変える。</li><li data-placeholder-text="List item">[核染色]核染色溶液を作る(Hoechst33342 などをBlocking Bufferで希釈、500 ul分作成）。</li><li data-placeholder-text="List item">サンプルを新しい2mlチューブに移し、PBSを捨て、核染色溶液を加える。</li><li data-placeholder-text="List item">横倒しの状態で4°Cでゆっくり振盪する。 この状態で２日インキュベーションする。</li><li data-placeholder-text="List item">[三次洗浄]サンプルをPBSが入った５０mlチューブに移し、４℃、12h以上浸透する。</li></ol><h2 id="MPSection:E0126CD3-47D7-4388-DEB2-AE22DAE8BAEF" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">7.4.  透明化</h2><p id="MPParagraphElement:371C6285-38CA-43D2-B17A-7DC4AD9C8C83" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement" data-placeholder-text="Subsection contents">組織の散乱を抑え、深部のイメージングを可能にするために透明化処理を行う。こ のプロトコルではSeeDBを用いた透明化について書くが、サンプルの状態に合わせ て他の透明化試薬の利用してもいい。透明化試薬の特徴に関しては別項に記載する。</p><ol id="MPListElement:BDC91290-11F9-42B4-E66E-691A985CD5D8" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">サンプルをcell culture dish (35 mm)に入れ、ピペットマンでPBSを丁寧に取る。サンプルが複数 種類ある場合は6well plateを使うと便利</li><li data-placeholder-text="List item">SeeDBをサンプルが泳ぐまで入れる</li><li data-placeholder-text="List item">振盪機で室温で振る. このときサンプルが SeeDBのなかをきちんと動いているか確認する。SeeDBは粘性が非常に高いので、震盪が弱いと透明化に時間がかかる。</li><li data-placeholder-text="List item">12h 震盪する。</li></ol><h2 id="MPSection:F116A27E-869A-467F-F4F3-55AE821D8D0C" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">7.5.  観察</h2><p id="MPParagraphElement:510F7BEE-CC7B-4EBC-8D68-ECB999D8BB6D" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement" data-placeholder-text="Subsection contents">透明化完了後、速やかに観察に移る。SeeDB中のサンプルは２日ほどで劣化し、蛍光も退色していくので保存はできない。蛍光共焦点顕微鏡または二光子顕微鏡で観察・撮影する。三次元像を正確に取得するためには、顕微鏡の扱いやパラメータ設定について習熟している必要がある。研究室の顕微鏡の種類によって必要な操作が異なるため、顕微鏡の扱いについてはここでは記述しない。[３.注意]の項目で前述したように、レンズの種類が非常に大きくイメージングのクオリティーに影響する。シリコーン浸またはオイル浸の３０倍のレンズを推奨する。</p><ol id="MPListElement:5AB38DEC-8143-44CC-D338-2665DD435E2F" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">透明化済みのサンプルをカバーガラスで挟み込む。サンプルとレンズが垂直になることが重要なので、カバーガラスで両側から挟み込む。このとき気泡ができないようにする。カバーガラスとサンプルの間に気泡ができるとその部分でレーザーが減衰するため、気泡部分の撮影はできなくなる。</li><li data-placeholder-text="List item">通常のプレパラートをセットするのと同じ要領でカバーガラスでサンドしたサンプルを顕微鏡に設置する。３次元で撮影を行う際は、カバーガラスが撮影途中でずれると画像が歪む。シリコーンやオイルを用いたレンズで撮影するときはとくにサンプルが動きやすいので、サンプルの設置が正しく行われていることを確認する。</li></ol><h1 id="MPSection:E30CFCCB-F9A4-4055-FDF5-D68FAD3312CF" class="MPSection MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E">8.  補足</h1><p id="MPParagraphElement:A21886AE-DD3A-448B-B5AD-A5ED7E06B1E7" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement"></p><h2 id="MPSection:B225D232-7491-4A59-AF9D-608E133FDFA8" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">8.1.  一次抗体について</h2><ul id="MPListElement:0B69EC88-C7B3-475F-A1AB-630FE083F56A" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">PFAで強く固定したサンプルでも問題ない抗体のみしか使用できない。</li><li data-placeholder-text="List item">[3.注意]の項で示した論文と同じクローンの抗体を使うことを推奨する。</li></ul><h2 id="MPSection:863579DF-83A1-492E-9FF1-DA54338B3336" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">8.2.  二次抗体について</h2><ul id="MPListElement:283BFD0D-3E19-488C-A7AE-4450DAB55CC1" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">Alexa Fluorシリーズの二次抗体を推奨するが、その他の二次抗体も使用可能。</li><li data-placeholder-text="List item">顕微鏡で使用可能なレーザー及びフィルターに合わせて蛍光波長を選ぶと良い</li><li data-placeholder-text="List item">基本的にHoechst, 488, 555, 647の蛍光波長で４色撮影を行なっている。</li><li data-placeholder-text="List item">深部の3次元画像構築を目指す場合はAlexa633,647といった長波長の試薬が向いている。傷害モデルなどの組織の自家蛍光にも依存するが、 基本的に555や647を用いると良い。</li></ul><h2 id="MPSection:4E54C976-ECBC-455F-D752-EB31A44B3BE8" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">8.3.  その他の蛍光試薬について</h2><ul id="MPListElement:8968EFB5-F92A-48F7-FDF1-F67210D20115" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">核染色はHoechst33342やDAPIを用いることができるが、上記したように長波長の蛍光試薬の方が３D撮影に向いているため、色が空いている場合、核染色もより長波長の染色試薬を用いた方がよい。PI, SYTOX REDといった試薬が使用可能。特にオススメなのがSYTOX GREENで、この試薬は非常に蛍光が強い。10万倍に希釈して使っても強い蛍光が検出できる。</li></ul><h2 id="MPSection:684A988A-16D4-402C-F373-4DC31CCC9EE5" class="MPSection MPParagraphStyle_1D02BBBD-7E6E-492A-8E82-93125A1926E3">8.4.  透明化試薬について</h2><ul id="MPListElement:26AF6426-A006-4F3C-D89B-9A7F78E1663A" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPListElement"><li data-placeholder-text="List item">透明化試薬は組織の３次元観察には必須。光の散乱を抑え、深部でも高精度のイメージングを可能にする。様々な透明化試薬が報告されているが、本プロトコルはSeeDBを推奨している。目的などに合わせて別の透明化試薬を使用することも可能。以下に透明化試薬の性能を比較した表をしるす。</li><li data-placeholder-text="List item">透明化処理は光の散乱を抑えるのに役立つが、基本的に自家蛍光は全く減らないことに注意(透明化と自家蛍光は関係ない)。そのため、組織の自家蛍光が弱い波長領域での撮影が求められる。 ノーマルリバーでは488の自家蛍光が強い。DDCでは555及び647のフィルターで 自家蛍光が強い。CDEは555で細かい細胞サイズのノイズが出る。TAAでは中心静 脈域に特に555で塊状の自家蛍光が見られるが、シグナルが強ければ気にならない。ただし、透明化試薬CUBICはDDCの赤黒い自家蛍光を洗い流す性質を持つ。DDCのサンプルを解析する場合はCUBICで前処理して自家蛍光を洗い流すのとよい。</li></ul><table xmlns="http://www.w3.org/1999/xhtml id="MPTableElement:E02F7EC1-A619-4D26-9A41-7BD27530BD4F" class="MPTableElement MPTableStyle_3A53A207-CF40-4F31-B84B-93EB12DD251D MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629" data-contained-object-id="MPTable:1027AD60-7AD9-4F8A-E487-0ADA2E611182"><colgroup><col><col><col><col><col><col></colgroup><thead style="display: table-header-group;"><tr><th data-placeholder-text="Header 1" class="placeholder"> </th><th data-placeholder-text="Header 2">透明化力</th><th data-placeholder-text="Header 3">明視野での観察</th><th data-placeholder-text="Header 4">蛍光タンパク質</th><th data-placeholder-text="Header 5">処理にかかる時間</th><th data-placeholder-text="Header 6">形態の保存性</th></tr></thead><tbody><tr><td data-placeholder-text="Data">ScaleA2</td><td data-placeholder-text="Data">+</td><td data-placeholder-text="Data">-</td><td data-placeholder-text="Data">+++</td><td data-placeholder-text="Data">Very Long</td><td data-placeholder-text="Data">-</td></tr><tr><td data-placeholder-text="Data">SeeDB</td><td data-placeholder-text="Data">++</td><td data-placeholder-text="Data">-</td><td data-placeholder-text="Data">++</td><td data-placeholder-text="Data">Short</td><td data-placeholder-text="Data">++</td></tr><tr><td data-placeholder-text="Data">CUBIC</td><td data-placeholder-text="Data">+++</td><td data-placeholder-text="Data">++</td><td data-placeholder-text="Data">-</td><td data-placeholder-text="Data">Long</td><td data-placeholder-text="Data">-</td></tr><tr><td data-placeholder-text="Data">TDE</td><td data-placeholder-text="Data">++</td><td data-placeholder-text="Data">+</td><td data-placeholder-text="Data">-</td><td data-placeholder-text="Data">Short</td><td data-placeholder-text="Data">++</td></tr><tr><td data-placeholder-text="Data">3DISCO</td><td data-placeholder-text="Data">++</td><td data-placeholder-text="Data">++</td><td data-placeholder-text="Data">-</td><td data-placeholder-text="Data">Long</td><td data-placeholder-text="Data">-</td></tr><tr><td data-placeholder-text="Data">BABB</td><td data-placeholder-text="Data">+++</td><td data-placeholder-text="Data">+++</td><td data-placeholder-text="Data">-</td><td data-placeholder-text="Data">Long</td><td data-placeholder-text="Data">-</td></tr></tbody></table><h1 id="MPSection:E5FC2B9A-5D0D-4F1B-D31A-C33914A39572" class="MPSection MPParagraphStyle_E72A5CA6-C4B5-4A6C-BF16-E58EBF82DA9E">9.  </h1><p id="MPParagraphElement:ACD5D8A6-D6F8-4F2D-90F9-99616069A9D2" class="MPElement MPParagraphStyle_3F525512-55A0-4B82-8D3E-A214C0469629 " data-object-type="MPParagraphElement"></p>
+
+<script src="./js/citation-compiler-app.js"></script>
+</body>
+</html>
